@@ -11,7 +11,20 @@ Install and open the ports 80 and 3000 (if is a VPS).
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
 ufw allow 80,3000/tcp
 ```
-## 2. PiVPN
+## 2. OpenVPN 
+Install the server
+```
+apt install ca-certificates wget net-tools gnupg
+wget -qO - https://as-repository.openvpn.net/as-repo-public.gpg | apt-key add -
+echo "deb http://as-repository.openvpn.net/as/debian focal main">/etc/apt/sources.list.d/openvpn-as-repo.list
+apt update
+apt install openvpn-as -y
+```
+Log into your server: `https://localhost:943/admin`, then set a password for the admin `openvpn`:
+```
+passwd openvpn
+```
+
 ## 3. Nextcloud
 Easily install Nextcloud using snap:
 ```
