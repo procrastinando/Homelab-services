@@ -1,7 +1,8 @@
 # Homelab-services
 A compilation of some ubuntu apps for my personal server
 
-## 1. AdGuard Home
+## 1. DNS Server
+###1.1. ADGuard home
 Since the port 53 is used by ubuntu, it has to be removed before setting up Adguard:
 ```
 sudo mkdir -p /etc/systemd/resolved.conf.d
@@ -24,6 +25,17 @@ Install and open the ports 80 and 3000 (if is a VPS).
 curl -s -S -L https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/scripts/install.sh | sh -s -- -v
 ufw allow 80,3000/tcp
 ```
+### 1.2. Pihole
+Tried on debian 11
+```
+curl -sSL https://install.pi-hole.net | bash
+```
+To solve the error: `FTL failed to start due to failed to create listening socket for port 53: Address already in use`
+```
+sudo systemctl stop systemd-resolved
+sudo systemctl disable systemd-resolved
+```
+In settings, run restart DNS
 ## 2. OpenVPN 
 Install the server
 ```
