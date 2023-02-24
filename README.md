@@ -52,7 +52,7 @@ passwd openvpn
 ```
 ## 3. PiVPN
 ```
-curl -sSL https://install.pi-hole.net | bash
+curl -L https://install.pivpn.io | bash
 ```
 ## 4. Nextcloud
 Easily install Nextcloud using snap:
