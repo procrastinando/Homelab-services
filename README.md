@@ -4,7 +4,20 @@ A compilation of some ubuntu apps for my personal server
 ## 1. AdGuard Home
 Since the port 53 is used by ubuntu, it has to be removed before setting up Adguard:
 ```
-
+sudo mkdir -p /etc/systemd/resolved.conf.d
+nano /etc/systemd/resolved.conf.d/adguardhome.conf
+```
+Insert the next text:
+```
+[Resolve]
+DNS=127.0.0.1
+DNSStubListener=no
+```
+Activate and restart another resolv.conf file:
+```
+sudo mv /etc/resolv.conf /etc/resolv.conf.backup
+sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+sudo systemctl reload-or-restart systemd-resolved
 ```
 Install and open the ports 80 and 3000 (if is a VPS).
 ```
