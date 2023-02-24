@@ -50,8 +50,11 @@ Log into your server: `https://localhost:943/admin`, then set a password for the
 ```
 passwd openvpn
 ```
-
-## 3. Nextcloud
+## 3. PiVPN
+```
+curl -sSL https://install.pi-hole.net | bash
+```
+## 4. Nextcloud
 Easily install Nextcloud using snap:
 ```
 sudo snap install nextcloud
