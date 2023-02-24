@@ -34,6 +34,7 @@ To solve the error: `FTL failed to start due to failed to create listening socke
 ```
 sudo systemctl stop systemd-resolved
 sudo systemctl disable systemd-resolved
+curl -sSL https://install.pi-hole.net | bash
 ```
 In settings, run restart DNS
 ## 2. OpenVPN 
