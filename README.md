@@ -2,7 +2,7 @@
 A compilation of some ubuntu apps for my personal server
 
 ## 1. DNS Server
-###1.1. ADGuard home
+### 1.1. ADGuard home
 Since the port 53 is used by ubuntu, it has to be removed before setting up Adguard:
 ```
 sudo mkdir -p /etc/systemd/resolved.conf.d
